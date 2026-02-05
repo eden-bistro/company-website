@@ -339,33 +339,10 @@
     <a href="#contact">Contact</a>
   </div>
 
-  <script src="script.js">
-    // Mobile nav
-    const navToggle = document.getElementById('navToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    navToggle && navToggle.addEventListener('click', ()=>{
-      mobileMenu.classList.toggle('show');
-    });
+  <script src="script.js" defer></script>
 
-    // Simple form validation & fake submission
-    const form = document.getElementById('contactForm');
-    const formMsg = document.getElementById('formMsg');
-    form && form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if(!name || !email || !message){ formMsg.textContent = 'Please fill all fields.'; return; }
-      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ formMsg.textContent = 'Please provide a valid email.'; return; }
-      formMsg.textContent = 'Thanks — your message has been received (demo).';
-      form.reset();
-    });
-
-    // Newsletter
-    const news = document.getElementById('newsletter');
-    news && news.addEventListener('submit', (e)=>{ e.preventDefault(); alert('Thanks for subscribing (demo).'); news.reset(); });
-  </script>
 </body>
 </html>
+
 
 
