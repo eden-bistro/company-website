@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O&M Company Ltd — Application Form</title>
+<style>
+body{font-family:Arial;margin:20px;background:#f6f6f6}
+.container{max-width:700px;margin:0 auto;background:#fff;padding:20px;border-radius:10px}
+input, select, textarea{width:100%;padding:8px;margin:6px 0 12px;border-radius:6px;border:1px solid #ccc}
+label{font-weight:600}
+button{padding:10px 15px;background:#0f6b66;color:#fff;border:none;border-radius:8px;cursor:pointer}
+.status{margin-top:12px;color:green}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Application Form — O&M Company Ltd</h2>
+<form id="appForm" enctype="multipart/form-data">
+  <label>Full Name *</label><input type="text" name="fullname" required>
+  <label>Email *</label><input type="email" name="email" required>
+  <label>Phone *</label><input type="tel" name="phone" required>
+  <label>Gender *</label>
+  <select name="gender" required><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select>
+  <label>Nationality *</label><input type="text" name="nationality" required>
+  
+  <label>Program Applied</label>
+  <select name="department"><option value="">Select</option><option>Embedded Systems</option>
+    <option>IoT </option><option>Software Development</option><option>Networking </option><option>Computer Maintenance</option>
+  </select>
+  <label>Motivation</label><textarea name="motivation" rows="3"></textarea>
+  <label>ID Photo (jpg, png, pdf) *</label><input type="file" name="id_photo" accept=".jpg,.jpeg,.png,.pdf" required>
+  <label>Passport Photo (jpg, png, pdf) *</label><input type="file" name="passport_photo" accept=".jpg,.jpeg,.png,.pdf" required>
+  
+  <button type="submit">Submit Application</button>
+  <div class="status" id="status"></div>
+</form>
+</div>
+<script>
+  // Prefill form fields from URL query parameters (e.g., ?position=PCB%20Design)
+  (function() {
+    function getQueryParams() {
+      const q = {};
+      const pairs = window.location.search.replace(/^\?/, '').split('&').filter(Boolean);
+      for (const p of pairs) {
+        const [k, v] = p.split('=').map(decodeURIComponent);
+        q[k] = v;
+      }
+      return q;
+    }
+
+    const params = getQueryParams();
+    if (params.position) {
+      // If your position input has id="position" (as in the server code), set it
+      const posInput = document.getElementById('position');
+      if (posInput) {
+        posInput.value = params.position;
+        // optional UX: brief note to user that the form was prefilled
+        const note = document.createElement('div');
+        note.style.margin = '8px 0';
+        note.style.padding = '8px';
+        note.style.background = '#f0fdf4';
+        note.style.border = '1px solid #bbf7d0';
+        note.style.color = '#065f46';
+        note.textContent = 'You are applying for: ' + params.position;
+        posInput.parentNode.insertBefore(note, posInput.nextSibling);
+      }
+    }
+
+    // Optionally prefill department if passed as ?department=...
+    if (params.department) {
+      const dept = document.getElementById('department');
+      if (dept) dept.value = params.department;
+    }
+  })();
+</script>
+
+</body>
+</html>

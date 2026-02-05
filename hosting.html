@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hosting Services — O&amp;M Company Ltd</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+  :root{--accent:#1f6feb;--muted:#6b7280;--bg:#f8fafc;--card:#ffffff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:#0f172a;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1100px;margin:0 auto;padding:28px}
+  header{background:linear-gradient(90deg, rgba(130, 182, 196, 0.438), rgba(117, 172, 199, 0.447));padding:10px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:70px;height:70px;border-radius:14px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+  nav ul{list-style:none;display:flex;gap:18px;align-items:center}
+  nav a{color:#050505;font-weight:500;transition:opacity .25s}
+  nav a:hover{opacity:.85}
+
+  .card{background:var(--card);padding:28px;border-radius:16px;box-shadow:0 8px 30px rgba(15,23,42,0.04);transition:transform .35s,box-shadow .35s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(31,111,235,0.18)}
+
+  .icon{font-size:40px;color:var(--accent);margin-bottom:10px;transition:transform .4s,color .4s}
+  .card:hover .icon{transform:scale(1.18);color:#0b63d6}
+
+  h1,h2,h3{color:var(--accent);margin-top:12px}
+  p.small{color:var(--muted)}
+
+  ul{margin:12px 0 0 0;padding-left:18px}
+  ul li{margin:8px 0;list-style:none}
+  ul li i{color:var(--accent);margin-right:8px}
+
+  .btn{background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;font-weight:600;display:inline-block;margin-right:10px;transition:background .25s,transform .25s}
+  .btn:hover{background:#0b63d6;transform:translateY(-2px)}
+  .btn.alt{background:transparent;color:var(--accent);border:1px solid rgba(31,111,235,0.4)}
+  .btn.alt:hover{background:var(--accent);color:#fff}
+
+  footer{text-align:center;padding:28px 0;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.nav{flex-direction:column;gap:8px}.logo{width:60px;height:60px}.card{padding:18px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+       <img src="assets/images/logo-om.png" alt="O&M Company Ltd logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding:60px 0">
+    <section class="card">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="icon"><i class="fas fa-server"></i></div>
+        <h2>Hosting & Cloud Services</h2>
+      </div>
+
+      <p class="small" style="margin-top:12px">
+        Our Hosting Services ensure your websites and applications are secure, reliable, and always available.
+        We provide scalable solutions for businesses of all sizes with robust cloud infrastructure.
+      </p>
+
+      <h3>What We Offer</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Web hosting optimized for speed and uptime.</li>
+        <li><i class="fas fa-check-circle"></i> Domain registration and management services.</li>
+        <li><i class="fas fa-check-circle"></i> Cloud storage and backup solutions.</li>
+        <li><i class="fas fa-check-circle"></i> SSL certificates and security hardening.</li>
+        <li><i class="fas fa-check-circle"></i> 24/7 support and monitoring.</li>
+      </ul>
+
+      <h3>Why Choose Our Hosting?</h3>
+      <ul>
+        <li><i class="fas fa-bolt"></i> High performance and fast load times.</li>
+        <li><i class="fas fa-shield-alt"></i> Secure and reliable infrastructure.</li>
+        <li><i class="fas fa-sync-alt"></i> Flexible and scalable plans for all business sizes.</li>
+        <li><i class="fas fa-headset"></i> Expert technical support anytime you need.</li>
+      </ul>
+
+      <div style="margin-top:20px">
+        <a class="btn" href="index.html#contact">Contact Us</a>
+        <a class="btn alt" href="index.html#services">Back to Services</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 O&amp;M Company Ltd. All rights reserved.</div>
+  </footer>
+</body>
+</html>

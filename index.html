@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O&amp;M Company Ltd — Empowering Rwandans with practical technical skills.</title>
+  <meta name="description" content="O&M Company Ltd — Driving business growth and efficiency through advanced technology and innovative strategies." />
+  <meta property="og:title" content="O&M Company Ltd — Training and empowering young Rwandans with practical technical skills." />
+  <meta property="og:description" content="Driving business growth and efficiency through advanced technology and innovative strategies." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+  <!-- Add Font Awesome CDN link in <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<!-- Add Font Awesome CDN in your <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+:root{--accent:#1f6feb;--muted:#6b7280;--bg:#f8fafc;--card:#ffffff}
+*{box-sizing:border-box}
+body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#162d61; -webkit-font-smoothing:antialiased}
+a{color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+header{background:linear-gradient(90deg,rgba(120, 197, 230, 0.418),rgba(61, 145, 223, 0.377));}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:4px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:110px;height:90px;border-radius:20px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+nav a{font-size:15px;color:var(--muted);text-decoration:none}
+.cta{display:flex;gap:10px}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid rgba(233, 235, 240, 0.97)}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;padding:58px 0;align-items:center}
+.hero h1{font-size:34px;margin:0 0 12px}
+.hero p{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(15,23,42,0.04)}
+/* Features (Vision / Mission / Core Values) - upgraded with icons & hover */
+.features{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+.feature{flex:1 1 180px;padding:20px;border-radius:12px;border:1px solid rgba(15,23,42,0.03);background:#fff;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .35s ease,box-shadow .35s ease,background .35s ease;cursor:pointer}
+.feature .icon{font-size:28px;margin-bottom:10px;color:var(--accent);transition:transform .35s ease,color .35s ease}
+.feature h4{color:var(--accent);margin:6px 0 8px;font-size:1.05rem}
+.feature .small{color:var(--muted);line-height:1.5}
+.feature:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 14px 30px rgba(31,111,235,0.12);background:linear-gradient(135deg, rgba(249,250,255,1), rgba(235,245,255,1))}
+.feature:hover .icon{transform:scale(1.18);color:#0b63d6}
+
+
+section{padding:42px 0;border-bottom:1px solid rgba(15,23,42,0.03)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.services .more{display:block;margin-top:10px;color:var(--accent);font-weight:600}
+#services .card.services .icon {
+  font-size: 28px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+#services .card.services:hover .icon {
+  transform: scale(1.15);
+  color: #0b63d6;
+}
+
+.skills .bar{height:12px;background:#eef2ff;border-radius:999px;overflow:hidden}
+.skills .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#8b5cf6);}
+
+.clients, 
+.partner-card{background:#fff;padding:12px;border-radius:8px;border:1px solid rgba(15,23,42,0.04)}
+
+.faq .qa{margin-bottom:12px}
+.team .people{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.footer{padding:28px 0;color:var(--muted)}
+/* responsive */
+@media (max-width:980px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)}.team .people{grid-template-columns:repeat(2,1fr)} nav ul{display:none} .mobile-nav-toggle{display:block}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+.mobile-nav-toggle{display:none;background:transparent;border:0;font-size:20px}
+.mobile-menu{display:none;padding:12px;background:var(--card);position:absolute;right:20px;top:74px;border-radius:8px;box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+.show{display:block}
+form input, form textarea{width:100%;padding:10px;border:1px solid rgba(15,23,42,0.06);border-radius:8px}
+.small{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <a class="brand" href="index.html">
+        <img src="assets/images/logo-om.png" alt="O&M Company Ltd logo" class="logo">
+      </a>          
+        </div>
+        <nav>
+          <button class="mobile-nav-toggle" id="navToggle">☰</button>
+          <ul id="navList">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+           
+            <li><a href="#clients">Clients</a></li>
+          
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="cta">
+         
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div>
+        <h1>Training and empowering young Rwandans with practical technical skills.</h1>
+        <p>Driving business growth and efficiency through advanced technology and innovative strategies.</p>
+        <div style="display:flex;gap:12px;margin-bottom:18px">
+          <a href="internship-training.html" class="btn">Apply for internship</a>
+          <a href="#watch" class="btn alt">Watch Video</a>
+        </div>
+        <section id="about">
+      <h2>About Us</h2>
+      <p>O&amp;M Company Ltd is dedicated to empowering individuals and transforming lives through innovative and sustainable ICT solutions, fostering opportunities for communities and driving inclusive digital transformation.</p>
+      
+    </section>
+       <!-- Features Section -->
+<div class="features">
+  <div class="feature">
+    <i class="fas fa-eye fa-2x icon"></i>
+    <h4>Vision</h4>
+    <p class="small">Lead the way in digital transformation, enhancing lives through innovative and sustainable ICT solutions.</p>
+  </div>
+
+  <div class="feature">
+    <i class="fas fa-bullseye fa-2x icon"></i>
+    <h4>Mission</h4>
+    <p class="small">Empower individuals and communities by delivering ICT services that foster inclusion and opportunity.</p>
+  </div>
+
+  <div class="feature">
+    <i class="fas fa-handshake fa-2x icon"></i>
+    <h4>Core Values</h4>
+    <p class="small">Innovation · Excellence · Integrity · Empowerment · Sustainability</p>
+  </div>
+</div>
+
+
+
+      </div>
+
+      <div>
+        <div class="card">
+        
+          <h4>Program Snapshot</h4>
+          <ul style="padding-left:18px;margin:8px 0;color:var(--muted)">
+            <li>Software Engineering</li>
+            <li>Network Engineering</li>
+            <li>Industrial IT</li>
+            <li>Hardware & Maintenance</li>
+            <li>Digital Marketing</li>
+            <li>AI assistant</li>
+            <li>Internship & Training</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Programs Section -->
+<section id="services">
+  <h2>Programs</h2>
+  <div class="grid">
+    <div class="card services">
+      <div class="icon"><i class="fas fa-code"></i></div>
+      <h3>Software Engineering</h3>
+      <p class="small">Custom apps, system integration and secure, maintainable software solutions.</p>
+     <a class="more" href="software-engineering.html">More Details</a>
+
+
+    </div>
+
+    <div class="card services">
+      <div class="icon"><i class="fas fa-network-wired"></i></div>
+      <h3>Network Engineering</h3>
+      <p class="small">Design and maintain networks for secure and reliable communication.</p>
+      <a class="more" href="network-engineering.html">More Details</a>
+    </div>
+
+    <div class="card services">
+      <div class="icon"><i class="fas fa-industry"></i></div>
+      <h3>Industrial Information Technology</h3>
+      <p class="small">Solutions to optimize industrial processes with data collection and automation.</p>
+      <a class="more" href="industrial-it.html">More Details</a>
+    </div>
+    <div class="card services">
+      <div class="icon"><i class="fas fa-tools"></i></div>
+      <h3>Hardware & Maintenance</h3>
+      <p class="small">Reliable operation and support for computer systems and devices.</p>
+      <a class="more" href="hardware-maintenance.html">More Details</a>
+    </div>
+    <div class="card services">
+      <div class="icon"><i class="fas fa-bullhorn"></i></div>
+      <h3>Digital Marketing</h3>
+      <p class="small">SEO, social media, and content strategies to grow your brand online.</p>
+      <a class="more" href="digital-marketing.html">More Details</a>
+    </div>
+    <div class="card services">
+      <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+      <h3>Internship & Certification Training</h3>
+      <p class="small">Practical experience and certificates to boost careers.</p>
+      <a class="more" href="internship-training.html">More Details</a>
+    </div>
+    <div class="card services">
+      <div class="icon"><i class="fas fa-comments"></i></div>
+      <h3>Consultation</h3>
+      <p class="small">ICT planning and strategy writing to align technology with your goals.</p>
+      <a class="more" href="consultation.html">More Details</a>
+    </div>
+    <div class="card services">
+      <div class="icon"><i class="fas fa-server"></i></div>
+      <h3>Hosting Services</h3>
+      <p class="small">Secure hosting for websites and applications.</p>
+      <a class="more" href="hosting.html">More Details</a>
+    </div>
+    <div class="card services">
+      <div class="icon"><i class="fas fa-video"></i></div>
+      <h3>CCTV Camera Services</h3>
+      <p class="small">Install and maintain surveillance systems for security and monitoring.</p>
+      <a class="more" href="cctv.html">More Details</a>
+    </div>
+  </div>
+</section>
+   <section id="solutions">
+  <h2>Solutions</h2>
+  <p>Delivering customized solutions that harness the full range of O&amp;M Company Ltd’s services to empower your business and foster growth.</p>
+  <div class="grid solutions-grid">
+    <div class="card solution-card">
+      <img src="assets/images/iot-solution.jpg" alt="IoT Project">
+      <div class="overlay">
+        <h4>IoT Solutions</h4>
+        <p>Transforming industries with device connectivity and intelligent automation.</p>
+      </div>
+    </div>
+    <div class="card solution-card">
+      <img src="assets/images/digital-transformation.jpg" alt="Digital Transformation Project">
+      <div class="overlay">
+        <h4>Digital Transformation</h4>
+        <p>End-to-end modernization of processes, systems, and culture.</p>
+      </div>
+    </div>
+    <div class="card solution-card">
+      <img src="assets/images/rnd-innovation.jpg" alt="R&D & Innovation Project">
+      <div class="overlay">
+        <h4>R&D & Innovation</h4>
+        <p>Research-driven solutions to unlock new opportunities and efficiencies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  <section id="services" class="container">
+  <h2 style="text-align:center; color:var(--accent); margin-bottom:30px;">Our Services</h2>
+  <!-- Web Development -->
+  <div class="service-card">
+    <div class="service-content">
+      <h3>Web Development</h3>
+      <p style="text-align: justify;">
+        At O&M Company Ltd, we combine technical knowledge and creative thinking to deliver innovative, reliable, and high-quality digital solutions.  
+        Our software engineering team focuses on developing secure, scalable, and user-friendly applications tailored to your specific business needs.  
+        We specialize in full-cycle development — from system design and coding to testing, deployment, and maintenance.  
+        Every project is crafted with precision, ensuring that technology works seamlessly to enhance efficiency and performance.  
+        Whether it’s web, mobile, or enterprise software, we build systems that drive digital transformation and long-term success.  
+      </p>
+    </div>
+    <div class="service-image">
+      <img src="assets/images/webdesign.jpg" alt="Web Development">
+    </div>
+  </div>
+  <!-- Artificial Intelligence -->
+  <div class="service-card reverse">
+    <div class="service-content">
+      <h3>Artificial Intelligence (AI)</h3>
+      <p style="text-align: justify;">
+        We leverage AI and machine learning to automate processes, improve decision-making, and enhance business intelligence.  
+        Our AI solutions empower organizations with predictive insights, automation, and data-driven strategies that boost productivity.  
+        Whether it’s computer vision, natural language processing, or intelligent automation — we bring AI to life for your business.  
+      </p>
+    </div>
+    <div class="service-image">
+      <img src="assets/images/ai.jpg" alt="Artificial Intelligence">
+    </div>
+  </div>
+  <!-- IoT and Embedded Systems -->
+  <div class="service-card">
+    <div class="service-content">
+      <h3>IoT and Embedded Systems</h3>
+      <p style="text-align: justify;">
+        We design and develop IoT-based systems that connect devices, collect real-time data, and optimize operations.  
+        Our embedded systems are engineered for performance, reliability, and security — ideal for industrial, agricultural, and smart city applications.  
+        From sensors to cloud dashboards, we bring intelligence to the physical world through innovation.  
+      </p>
+    </div>
+    <div class="service-image">
+      <img src="assets/images/IoT.jpg" alt="IoT and Embedded Systems">
+    </div>
+  </div>
+  <!-- Prototypes and Project Implementation -->
+  <div class="service-card reverse">
+    <div class="service-content">
+      <h3>Prototypes and Project Implementation</h3>
+      <p style="text-align: justify;">
+        We help innovators and companies turn their ideas into working prototypes.  
+        From initial concept and circuit design to programming and system integration, we deliver fully functional models ready for testing and deployment.  
+        Our project implementation services ensure your concept evolves into a real, market-ready solution with precision and quality.  
+      </p>
+    </div>
+    <div class="service-image">
+      <img src="assets/images/Prototype.jpg" alt="Prototypes and Implementation">
+    </div>
+  </div>
+</section>
+<!-- Add Font Awesome CDN in your <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <section id="clients">
+      <h2>Clients</h2>
+      <div class="clients">
+        <div class="partner-card">In Hope Ltd</div>
+        <div class="partner-card">Nyereka Tech</div>
+        <div class="partner-card">The sun studio</div>
+        <div class="partner-card">Ikigugu group Ltd</div>
+        <div class="partner-card">Berwa design</div>
+      </div>
+    <section id="faqs" class="faq">
+      <h2>FAQs</h2>
+      <div class="qa"><strong>What services does O&amp;M Company Ltd offer?</strong><p class="small">We provide a wide range of services including Software Engineering, Network Engineering, Industrial IT, Digital Marketing, CCTV, Hosting, Consultation and Training.</p></div>
+      <div class="qa"><strong>How can I contact O&amp;M Company Ltd?</strong><p class="small">Use our contact form below, call +250 795 209 032, or email ikigugugroupltd@gmail.com.</p></div>
+      <div class="qa"><strong>Do you offer customized solutions?</strong><p class="small">Yes — we tailor solutions to the client's needs across multiple industries.</p></div>
+    </section>
+
+    <section id="team" class="team">
+      <h2>Team</h2>
+      <div class="people">
+        <div class="card"><strong>KWIZREA Origene</strong><div class="small">Chief Executive Officer</div></div>
+        <div class="card"><strong>MUNYANEZA Emmanuel</strong><div class="small">Innovation Partner - Full-Stack Developer</div></div>
+        <div class="card"><strong>UWERA Gloiose</strong><div class="small">Innovation Partner - Full-Stack Developer</div></div>
+        <div class="card"><strong>MUVANDIMWE Marie Divine</strong><div class="small">Innovation Partner - Full-Stack Developer</div></div>
+         <div class="card"><strong>IRADUKUNDA Providance</strong><div class="small">Innovation Partner - digital-marketing</div></div>
+       <div class="card"><strong>AHORUGEZE Jean Claude</strong><div class="small">Innovation Partner - network-engineer and website-hoster</div></div>  </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Get in touch with us for inquiries, support, or to explore how O&amp;M Company Ltd can assist in your digital transformation journey.</p>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
+        <form id="contactForm" class="card" novalidate>
+          <label>Your Name</label>
+          <input id="name" name="name" required />
+          <label>Your Email</label>
+          <input id="email" name="email" type="email" required />
+          <label>Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button type="submit" class="btn">Send Message</button>
+            <button type="reset" class="btn alt">Reset</button>
+          </div>
+          <div id="formMsg" class="small" style="margin-top:8px"></div>
+        </form>
+
+        <div class="card">
+          <h4>Office</h4>
+          <p class="small">Cyanika Road, Musanze -near snow hotel</p>
+          <p class="small">Phone: +250780892156</p>
+          <p class="small">Email: omcompanyltd@gmail.com</p>
+          <hr />
+          <h4>Join Our Newsletter</h4>
+          <form id="newsletter">
+            <input id="newsEmail" name="newsEmail" type="email" placeholder="Enter your email..." required />
+            <div style="margin-top:8px"><button class="btn">Subscribe</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container footer">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+   <div>
+        <div style="font-weight:700">O&amp;M Company Ltd</div>
+        <div class="small">Cyanika Road, Musanze -near snow hotel</div>
+        <div class="small">Phone: +250780892156</div>
+        <div class="small">Email: omcompanyltd@gmail.com</div>
+      </div>
+      
+    </div>
+    <hr style="margin:18px 0" />
+    <div class="small">© Copyright 2014 - 2025 O&amp;M Company Ltd, All Rights Reserved.</div>
+  </footer>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="#home">Home</a><br>
+    <a href="#about">About</a><br>
+    <a href="#services">Services</a><br>
+    
+    <a href="#contact">Contact</a>
+  </div>
+
+  <script src="script.js">
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle && navToggle.addEventListener('click', ()=>{
+      mobileMenu.classList.toggle('show');
+    });
+
+    // Simple form validation & fake submission
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    form && form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){ formMsg.textContent = 'Please fill all fields.'; return; }
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ formMsg.textContent = 'Please provide a valid email.'; return; }
+      formMsg.textContent = 'Thanks — your message has been received (demo).';
+      form.reset();
+    });
+
+    // Newsletter
+    const news = document.getElementById('newsletter');
+    news && news.addEventListener('submit', (e)=>{ e.preventDefault(); alert('Thanks for subscribing (demo).'); news.reset(); });
+  </script>
+</body>
+</html>
