@@ -1,64 +1,80 @@
-// script.js
-
-// Mobile nav toggle
+// ==============================
+// MOBILE NAV TOGGLE
+// ==============================
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
-navToggle && navToggle.addEventListener('click', () => {
-  mobileMenu.classList.toggle('show');
-});
 
-// Smooth scroll for internal links
+if (navToggle && mobileMenu) {
+  navToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
+  });
+}
+
+// ==============================
+// SMOOTH SCROLL (INTERNAL LINKS)
+// ==============================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
+  anchor.addEventListener('click', e => {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target){
-      target.scrollIntoView({behavior: 'smooth'});
+
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
-    if(mobileMenu.classList.contains('show')){
+
+    if (mobileMenu?.classList.contains('show')) {
       mobileMenu.classList.remove('show');
     }
   });
 });
 
-// Fade-in animations
+// ==============================
+// FADE-IN ANIMATION
+// ==============================
 const faders = document.querySelectorAll('section, .card, .skill-item, .feature');
-const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-  entries.forEach(entry => {
-    if(!entry.isIntersecting) return;
-    entry.target.style.opacity = 1;
-    entry.target.style.transform = 'translateY(0px)';
-    appearOnScroll.unobserve(entry.target);
-  });
-}, appearOptions);
 
-faders.forEach(fader => {
-  fader.style.opacity = 0;
-  fader.style.transform = 'translateY(30px)';
-  fader.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-  appearOnScroll.observe(fader);
+const appearOnScroll = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.2, rootMargin: '0px 0px -50px 0px' }
+);
+
+faders.forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  appearOnScroll.observe(el);
 });
 
-// Sticky header
-const nav = document.querySelector('header');
+// ==============================
+// STICKY HEADER EFFECT
+// ==============================
+const header = document.querySelector('header');
+
 window.addEventListener('scroll', () => {
-  if(window.scrollY > 50){
-    nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-    nav.style.position = 'sticky';
-    nav.style.top = '0';
-    nav.style.background = 'rgba(255,255,255,0.95)';
-    nav.style.transition = 'background 0.3s ease, box-shadow 0.3s ease';
+  if (window.scrollY > 50) {
+    header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+    header.style.background = 'rgba(255,255,255,0.95)';
   } else {
-    nav.style.boxShadow = 'none';
-    nav.style.background = 'linear-gradient(90deg,rgba(120,197,230,0.418),rgba(61,145,223,0.377))';
+    header.style.boxShadow = 'none';
+    header.style.background =
+      'linear-gradient(90deg,rgba(120,197,230,0.418),rgba(61,145,223,0.377))';
   }
 });
 
-// Back-to-top button
+// ==============================
+// BACK TO TOP BUTTON
+// ==============================
 const backBtn = document.createElement('button');
 backBtn.id = 'backToTop';
 backBtn.textContent = '↑';
+
 Object.assign(backBtn.style, {
   position: 'fixed',
   bottom: '30px',
@@ -72,52 +88,79 @@ Object.assign(backBtn.style, {
   display: 'none',
   zIndex: '999'
 });
+
 document.body.appendChild(backBtn);
 
 window.addEventListener('scroll', () => {
   backBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
 });
-backBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
-// Highlight current section
+backBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ==============================
+// ACTIVE NAV LINK HIGHLIGHT
+// ==============================
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav ul li a');
 
 window.addEventListener('scroll', () => {
   let current = '';
+
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if(window.scrollY >= sectionTop){
-      current = section.getAttribute('id');
+    if (window.scrollY >= section.offsetTop - 120) {
+      current = section.id;
     }
   });
+
   navLinks.forEach(link => {
-    link.classList.remove('active');
-    if(link.getAttribute('href') === '#' + current){
-      link.classList.add('active');
-    }
+    link.classList.toggle(
+      'active',
+      link.getAttribute('href') === `#${current}`
+    );
   });
 });
 
-// Contact form
+// ==============================
+// CONTACT FORM (VALIDATION ONLY)
+// ==============================
 const form = document.getElementById('contactForm');
 const formMsg = document.getElementById('formMsg');
-form && form.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  if(!name || !email || !message){ formMsg.textContent = 'Please fill all fields.'; return; }
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ formMsg.textContent = 'Please provide a valid email.'; return; }
-  formMsg.textContent = 'Thanks — your message has been received (demo).';
-  form.reset();
-});
 
-// Newsletter demo
-const news = document.getElementById('newsletter');
-news && news.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  alert('Thanks for subscribing (demo).');
-  news.reset();
-});
+if (form && formMsg) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
 
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      formMsg.textContent = 'Please fill all fields.';
+      return;
+    }
+
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      formMsg.textContent = 'Please provide a valid email.';
+      return;
+    }
+
+    // EmailJS integration goes here
+    formMsg.textContent = 'Thanks — your message has been received (demo).';
+    form.reset();
+  });
+}
+
+// ==============================
+// NEWSLETTER (DEMO)
+// ==============================
+const newsletter = document.getElementById('newsletter');
+
+if (newsletter) {
+  newsletter.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thanks for subscribing (demo).');
+    newsletter.reset();
+  });
+}
